@@ -1,8 +1,15 @@
 from __init__ import app
 from flask import render_template, url_for, flash, redirect
+from flask_sqlalchemy import SQLAlchemy
 from forms import RegistrationForm, LoginForm
 
+
 app.config['SECRET_KEY'] = 'fd8740f98ddd013ce021f5f2bde3c3d7'  # to get secret key in python console type --> import secrets --> secrets.token_hex(16)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+db = SQLAlchemy(app)
+
+from models import User, Post
+
 
 posts = [
     {

@@ -64,9 +64,9 @@ def save_picture(form_picture):
     picture_path = os.path.join(app.root_path, 'static/profile_pics', picture_fn)
 
     output_size = (125, 125)
-    i = Image.open(form_picture)
-    i.thumbnail(output_size)
-    i.save(picture_path)
+    img = Image.open(form_picture)
+    img.thumbnail(output_size)
+    img.save(picture_path)
 
     return picture_fn
 
@@ -142,3 +142,6 @@ def delete_post(post_id):
     db.session.commit()
     flash('Your post has been deleted!', 'success')
     return redirect(url_for('home'))
+
+
+

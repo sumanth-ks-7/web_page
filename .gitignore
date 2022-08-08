@@ -13,3 +13,5 @@ __pycache__
 SWIM_EA-404.xlsm
 database.db
 flaskblog/static/profile_pics
+json_to_sqlite.py
+posts.json
